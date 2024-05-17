@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ${{values.name | dump}}
+  description: ${{values.description | dump}}
+  tags:
+    - rest
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: ${{values.schema_type}}
+  lifecycle: experimental
+  owner: guest
+  definition:
+    $text: ./api.proto
